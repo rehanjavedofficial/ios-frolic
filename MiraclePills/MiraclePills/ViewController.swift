@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var statePicker: UIPickerView!
+    @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var stateBtn: UIButton!
     @IBOutlet weak var registerBtn: UIButton!
     
@@ -67,5 +68,33 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     }
     
+    @IBAction func buyPills(_ sender: Any) {
+        
+        if let name = fullName.text{
+            
+            performSegue(withIdentifier: "Success", sender: name)
+            
+        }
+    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let successPage = segue.destination as? SuccessPage {
+            
+           if let name = sender as? String{
+                
+                successPage.message = name
+                
+            }
+            
+        }
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
 }
 

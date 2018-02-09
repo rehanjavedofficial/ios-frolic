@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nod-bu-512">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="700" id="PiB-tM-DH6"/>
+                                </constraints>
+                            </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YMs-kL-6ff">
                                 <rect key="frame" x="67" y="8" width="100" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -147,9 +153,15 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buyPills:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aoe-T8-g3N"/>
+                                </connections>
                             </button>
-                            <pickerView hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pS4-TV-nV7">
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS4-TV-nV7">
                                 <rect key="frame" x="20" y="481" width="335" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="9ab-tV-T9A"/>
+                                </constraints>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.95694750547409058" green="0.97798198461532593" blue="0.92474490404129028" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -161,6 +173,7 @@
                             <constraint firstItem="tf1-xg-zjX" firstAttribute="leading" secondItem="iF8-ko-Koo" secondAttribute="leading" id="3aS-Yd-1Te"/>
                             <constraint firstItem="EcG-01-OgT" firstAttribute="trailing" secondItem="tf1-xg-zjX" secondAttribute="trailing" id="5ae-eK-u0O"/>
                             <constraint firstItem="EcG-01-OgT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6NQ-Fo-kS7"/>
+                            <constraint firstItem="nod-bu-512" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="762-HU-Cma"/>
                             <constraint firstItem="AsI-4K-pqz" firstAttribute="top" secondItem="Z2K-JZ-b6R" secondAttribute="bottom" constant="8" id="7BV-df-zJa"/>
                             <constraint firstItem="3Ek-5i-LvI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7X2-2J-lql"/>
                             <constraint firstItem="BRa-ML-7V5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BCr-St-K21"/>
@@ -169,6 +182,7 @@
                             <constraint firstItem="cN9-rs-Wki" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FIk-Ob-vVk"/>
                             <constraint firstItem="tuO-QM-c1q" firstAttribute="leading" secondItem="3Ek-5i-LvI" secondAttribute="leading" id="GC9-P8-GU7"/>
                             <constraint firstItem="Z2K-JZ-b6R" firstAttribute="trailing" secondItem="BRa-ML-7V5" secondAttribute="trailing" id="JzE-sP-ZqR"/>
+                            <constraint firstItem="nod-bu-512" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LkB-Ga-faj"/>
                             <constraint firstItem="c3D-VE-uoI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ntc-x8-mlq"/>
                             <constraint firstItem="AsI-4K-pqz" firstAttribute="leading" secondItem="Z2K-JZ-b6R" secondAttribute="leading" id="P8w-UG-49m"/>
                             <constraint firstItem="iF8-ko-Koo" firstAttribute="leading" secondItem="wSI-05-pnN" secondAttribute="leading" id="Qqe-xk-tPc"/>
@@ -181,6 +195,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iF8-ko-Koo" secondAttribute="trailing" constant="20" id="ZVP-0h-1fs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BRa-ML-7V5" secondAttribute="trailing" constant="20" id="a6Z-7u-CI8"/>
                             <constraint firstItem="WOJ-CH-iYq" firstAttribute="trailing" secondItem="tuO-QM-c1q" secondAttribute="trailing" id="bJ6-Jy-kDg"/>
+                            <constraint firstItem="nod-bu-512" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bZe-9U-qIV"/>
                             <constraint firstItem="iF8-ko-Koo" firstAttribute="top" secondItem="wSI-05-pnN" secondAttribute="bottom" constant="10" id="cFO-n6-Hlw"/>
                             <constraint firstItem="Z2K-JZ-b6R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="co4-AL-7lv"/>
                             <constraint firstItem="tuO-QM-c1q" firstAttribute="trailing" secondItem="3Ek-5i-LvI" secondAttribute="trailing" id="d1t-Hp-XTB"/>
@@ -223,17 +238,58 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="fullName" destination="tf1-xg-zjX" id="eMe-l0-d11"/>
                         <outlet property="registerBtn" destination="c3D-VE-uoI" id="Eoj-gm-1UH"/>
                         <outlet property="stateBtn" destination="AsI-4K-pqz" id="hBz-o6-Zw6"/>
                         <outlet property="statePicker" destination="pS4-TV-nV7" id="uFB-O7-Shr"/>
+                        <segue destination="1jG-H0-jMw" kind="show" identifier="Success" id="iqQ-Yl-aB4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="40.929535232383813"/>
+            <point key="canvasLocation" x="-238" y="40"/>
+        </scene>
+        <!--Success Page-->
+        <scene sceneID="nqw-qZ-aBP">
+            <objects>
+                <viewController id="1jG-H0-jMw" customClass="SuccessPage" customModule="MiraclePills" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xx7-ue-0RR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="successIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="zMw-yU-351">
+                                <rect key="frame" x="119" y="269" width="136" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBp-Kw-Zt3">
+                                <rect key="frame" x="16" y="20" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VI6-u9-sFG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YBp-Kw-Zt3" firstAttribute="top" secondItem="xx7-ue-0RR" secondAttribute="top" constant="20" id="6db-i1-oxn"/>
+                            <constraint firstItem="hpu-00-Z5x" firstAttribute="trailing" secondItem="YBp-Kw-Zt3" secondAttribute="trailing" constant="16" id="G0r-Us-cLS"/>
+                            <constraint firstItem="YBp-Kw-Zt3" firstAttribute="leading" secondItem="hpu-00-Z5x" secondAttribute="leading" constant="16" id="xfk-yL-ASf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hpu-00-Z5x"/>
+                    </view>
+                    <connections>
+                        <outlet property="greetingMessage" destination="YBp-Kw-Zt3" id="Ljb-2R-6ie"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tm0-Gi-DhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662.5" y="40.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="miraclePillEmoji" width="90" height="90"/>
+        <image name="successIndicator" width="180" height="180"/>
     </resources>
 </document>

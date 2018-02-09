@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8399AC82202DBCD300D4B77C /* SuccessPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399AC81202DBCD300D4B77C /* SuccessPage.swift */; };
 		83EAB718202A16E400CA1191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAB717202A16E400CA1191 /* AppDelegate.swift */; };
 		83EAB71A202A16E400CA1191 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAB719202A16E400CA1191 /* ViewController.swift */; };
 		83EAB71D202A16E400CA1191 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EAB71B202A16E400CA1191 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8399AC81202DBCD300D4B77C /* SuccessPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPage.swift; sourceTree = "<group>"; };
 		83EAB714202A16E400CA1191 /* MiraclePills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiraclePills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83EAB717202A16E400CA1191 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83EAB719202A16E400CA1191 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				83EAB71E202A16E400CA1191 /* Assets.xcassets */,
 				83EAB720202A16E400CA1191 /* LaunchScreen.storyboard */,
 				83EAB723202A16E400CA1191 /* Info.plist */,
+				8399AC81202DBCD300D4B77C /* SuccessPage.swift */,
 			);
 			path = MiraclePills;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			files = (
 				83EAB71A202A16E400CA1191 /* ViewController.swift in Sources */,
 				83EAB718202A16E400CA1191 /* AppDelegate.swift in Sources */,
+				8399AC82202DBCD300D4B77C /* SuccessPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,12 +278,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6DGSZNEYU5;
 				INFOPLIST_FILE = MiraclePills/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rehanjaved.MiraclePills;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -289,12 +295,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6DGSZNEYU5;
 				INFOPLIST_FILE = MiraclePills/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rehanjaved.MiraclePills;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
